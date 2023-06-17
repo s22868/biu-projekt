@@ -1,18 +1,13 @@
 import { NextPage } from 'next'
 import { McDonaldsMenu } from '@/db'
 import axios from 'axios'
+import Home from '@/components/home/Home'
 
-const Home: NextPage = async () => {
+const Page: NextPage = async () => {
   const { data: menu }: { data: McDonaldsMenu } = await axios.get(
     'http://localhost:3000/api/menu'
   )
-  console.log(menu)
-
-  return (
-    <main className="container mx-auto p-4">
-      <div>McDonald</div>
-    </main>
-  )
+  return <Home menu={menu}></Home>
 }
 
-export default Home
+export default Page

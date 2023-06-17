@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import React, {
   PropsWithChildren,
   createContext,
@@ -13,12 +13,17 @@ interface CartItem extends MenuItem {
 
 interface CartState {
   cartItems: CartItem[]
+  deliveryOption: 'eat-in' | 'take-away' | 'delivery'
 }
 
 type CartAction =
   | { type: 'ADD_TO_CART'; payload: CartItem }
   | { type: 'REMOVE_FROM_CART'; payload: CartItem }
   | { type: 'CLEAR_CART' }
+  | {
+      type: 'SET_DELIVERY_OPTION'
+      payload: 'eat-in' | 'take-away' | 'delivery'
+    }
 
 interface CartContextType {
   cartState: CartState
@@ -44,13 +49,15 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
       }
     case 'CLEAR_CART':
       return { ...state, cartItems: [] }
+    case 'SET_DELIVERY_OPTION':
+      return { ...state, deliveryOption: action.payload }
     default:
       return state
   }
 }
 
 export const CartProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const [cartState, cartDispatch] = useReducer(cartReducer, { cartItems: [] })
+  const [cartState, cartDispatch] = useReducer(cartReducer, { cartItems: [], deliveryOption: 'eat-in' })
 
   const cartContextValue: CartContextType = {
     cartState,
