@@ -3,13 +3,16 @@ import Logo from '@/components/icons/Logo'
 import { useCart } from '@/context/CartContext'
 import React, { FC } from 'react'
 import NextImage from 'next/image'
+import { useRouter } from 'next/navigation'
 
-interface WelcomeProps {
-  hide: () => void
-}
-
-const Welcome: FC<WelcomeProps> = ({ hide }) => {
+const Welcome: FC = () => {
   const { cartDispatch } = useCart()!
+  const router = useRouter()
+
+  const handleOnClick = (type: 'eat-in' | 'take-away') => {
+    cartDispatch({ type: 'SET_DELIVERY_OPTION', payload: type })
+    router.push('/menu/home')
+  }
 
   return (
     <div className="container flex flex-col items-center justify-between h-screen mx-auto my-auto p-14">
@@ -20,20 +23,11 @@ const Welcome: FC<WelcomeProps> = ({ hide }) => {
         Gdzie będziesz dzisiaj jadł?
       </h1>
       <div className="flex gap-6">
-        <DeliveryOption
-          type="eat-in"
-          onClick={() => {
-            cartDispatch({ type: 'SET_DELIVERY_OPTION', payload: 'eat-in' })
-            hide()
-          }}
-        />
+        <DeliveryOption type="eat-in" onClick={() => handleOnClick('eat-in')} />
 
         <DeliveryOption
           type="take-away"
-          onClick={() => {
-            cartDispatch({ type: 'SET_DELIVERY_OPTION', payload: 'take-away' })
-            hide()
-          }}
+          onClick={() => handleOnClick('take-away')}
         />
       </div>
       <div>
