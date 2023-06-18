@@ -7,7 +7,7 @@ import React, {
 } from 'react'
 import { MenuItem } from '@/db'
 
-interface CartItem extends MenuItem {
+export interface CartItem extends MenuItem {
   quantity: number
 }
 
@@ -18,7 +18,7 @@ interface CartState {
 
 type CartAction =
   | { type: 'ADD_TO_CART'; payload: CartItem }
-  | { type: 'REMOVE_FROM_CART'; payload: CartItem }
+  | { type: 'REMOVE_FROM_CART'; payload: { index: number } }
   | { type: 'CLEAR_CART' }
   | {
       type: 'SET_DELIVERY_OPTION'
@@ -44,7 +44,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
       return {
         ...state,
         cartItems: state.cartItems.filter(
-          (item) => item.name !== action.payload.name
+          (item, index) => index !== action.payload.index
         ),
       }
     case 'CLEAR_CART':
@@ -57,7 +57,10 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
 }
 
 export const CartProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const [cartState, cartDispatch] = useReducer(cartReducer, { cartItems: [], deliveryOption: 'eat-in' })
+  const [cartState, cartDispatch] = useReducer(cartReducer, {
+    cartItems: [],
+    deliveryOption: 'eat-in',
+  })
 
   const cartContextValue: CartContextType = {
     cartState,

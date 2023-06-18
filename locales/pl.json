@@ -33,5 +33,15 @@
   "Product": {
     "cancel": "Anuluj",
     "add": "Dodaj do zamówienia"
+  },
+  "Summary": {
+    "your order": "Twoje zamówienie",
+    "remove": "Usuń",
+    "details": "Szczegóły",
+    "order more": "Zamów więcej",
+    "sub total": "Suma częściowa",
+    "tax": "Podatek",
+    "total": "Suma",
+    "confirm": "Potwierdź zamówienie"
   }
 }

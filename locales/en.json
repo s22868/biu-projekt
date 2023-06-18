@@ -33,5 +33,15 @@
   "Product": {
     "cancel": "Cancel",
     "add": "Add to order"
+  },
+  "Summary": {
+    "your order": "Your order",
+    "remove": "Remove",
+    "details": "Show details",
+    "order more": "Order more",
+    "total": "Total",
+    "sub total": "Sub total",
+    "tax": "Tax",
+    "confirm": "Confirm My Order"
   }
 }
