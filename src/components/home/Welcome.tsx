@@ -3,11 +3,18 @@ import Logo from '@/components/icons/Logo'
 import { useCart } from '@/context/CartContext'
 import React, { FC } from 'react'
 import NextImage from 'next/image'
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next-intl/client'
+import { useLocale, useTranslations } from 'next-intl'
+import Link from 'next-intl/link'
+import classNames from 'classnames'
 
 const Welcome: FC = () => {
   const { cartDispatch } = useCart()!
+  const t = useTranslations('Welcome')
+  const locale = useLocale()
   const router = useRouter()
+
+  console.log(locale)
 
   const handleOnClick = (type: 'eat-in' | 'take-away') => {
     cartDispatch({ type: 'SET_DELIVERY_OPTION', payload: type })
@@ -20,7 +27,7 @@ const Welcome: FC = () => {
         <Logo size="sm" />
       </div>
       <h1 className="w-full max-w-md mx-auto my-8 text-6xl text-center">
-        Gdzie będziesz dzisiaj jadł?
+        {t('header')}
       </h1>
       <div className="flex gap-6">
         <DeliveryOption type="eat-in" onClick={() => handleOnClick('eat-in')} />
@@ -31,12 +38,22 @@ const Welcome: FC = () => {
         />
       </div>
       <div>
-        <h2 className="text-center">Language</h2>
+        <h2 className="text-center">{t('language')}</h2>
         <div className="flex gap-4 p-4">
-          <button className="p-2 border border-primary">Polski</button>
-          <button className="p-2 border border-gray-400 cursor-not-allowed">
-            Angielski
-          </button>
+          <Link href="/" locale="pl" className={classNames("p-2 border border-gray-400", {
+            'border-primary': locale === 'pl',
+          })}>
+            {t('polish')}
+          </Link>
+          <Link
+            href="/"
+            locale="en"
+            className={classNames("p-2 border border-gray-400", {
+              'border-primary': locale === 'en',
+            })}
+          >
+            {t('english')}
+          </Link>
         </div>
       </div>
     </div>
@@ -51,13 +68,14 @@ interface DeliveryOptionProps {
 }
 
 const DeliveryOption: FC<DeliveryOptionProps> = ({ onClick, type }) => {
+  const t = useTranslations('Welcome')
   return (
     <button
       className="flex flex-col items-center gap-2 py-4 transition-colors border border-gray-500 hover:border-primary active:bg-gray-200 w-[260px]"
       onClick={onClick}
     >
       <h4 className="text-2xl font-light tracking-wider">
-        {type === 'eat-in' ? 'Na miejscu' : 'Na wynos'}
+        {type === 'eat-in' ? t('eat-in') : t('take-away')}
       </h4>
       <NextImage
         src={`/images/${type}.png`}

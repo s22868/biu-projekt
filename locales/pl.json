@@ -1,0 +1,10 @@
+{
+  "Welcome": {
+    "header": "Gdzie będziesz dzisiaj jadł?",
+    "eat-in": "Na miejscu",
+    "take-away": "Na wynos",
+    "language": "Język",
+    "polish": "Polski",
+    "english": "Angielski"
+  }
+}

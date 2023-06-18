@@ -1,0 +1,10 @@
+{
+  "Welcome": {
+    "header": "Where will you eat today?",
+    "eat-in": "Eat in",
+    "take-away": "Take away",
+    "language": "Language",
+    "polish": "Polish",
+    "english": "English"
+  }
+}
