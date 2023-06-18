@@ -28,5 +28,9 @@
     "mccafe": "Kawa",
     "salads": "Sałatki",
     "breakfast": "Śniadania"
+  },
+  "Product": {
+    "cancel": "Anuluj",
+    "add": "Dodaj do zamówienia"
   }
 }

@@ -3,7 +3,9 @@ import { Category, MenuItem } from '@/db'
 import React from 'react'
 
 const GetCategoryItems = async (category: Category) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL!}/api/menu/${category}`)
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_SITE_URL!}/api/menu/${category}`
+  )
   const data = await res.json()
   return data
 }

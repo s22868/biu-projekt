@@ -28,5 +28,9 @@
     "mccafe": "McCafe",
     "salads": "Salads",
     "breakfast": "breakfast"
+  },
+  "Product": {
+    "cancel": "Cancel",
+    "add": "Add to order"
   }
 }

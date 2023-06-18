@@ -32,7 +32,10 @@ export default async function RootLayout({
     <html lang={locale}>
       <NextIntlClientProvider locale={locale} messages={messages}>
         <CartProvider>
-          <body className={inter.className}>{children}</body>
+          <body className={inter.className}>
+            {children}
+            <div id="modal-root" />
+          </body>
         </CartProvider>
       </NextIntlClientProvider>
     </html>
