@@ -14,11 +14,9 @@ const Welcome: FC = () => {
   const locale = useLocale()
   const router = useRouter()
 
-  console.log(locale)
-
   const handleOnClick = (type: 'eat-in' | 'take-away') => {
     cartDispatch({ type: 'SET_DELIVERY_OPTION', payload: type })
-    router.push('/menu/home')
+    router.push('/menu/hamburger')
   }
 
   return (

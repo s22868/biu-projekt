@@ -6,5 +6,27 @@
     "language": "Język",
     "polish": "Polski",
     "english": "Angielski"
+  },
+  "Nav": {
+    "hamburger": "Burgery",
+    "fries": "Frytki",
+    "drinks": "Napoje",
+    "desserts": "Desery",
+    "mcwraps": "McWrapy",
+    "chicken": "Kurczak",
+    "mccafe": "Kawa",
+    "salads": "Sałatki",
+    "breakfast": "Śniadania"
+  },
+  "ProductsPage": {
+    "hamburger": "Burgery",
+    "fries": "Frytki",
+    "drinks": "Napoje",
+    "desserts": "Desery",
+    "mcwraps": "McWrapy",
+    "chicken": "Kurczak",
+    "mccafe": "Kawa",
+    "salads": "Sałatki",
+    "breakfast": "Śniadania"
   }
 }

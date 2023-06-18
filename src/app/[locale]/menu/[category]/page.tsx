@@ -1,10 +1,11 @@
-import { Category } from '@/db'
+import ProductsPage from '@/components/products/ProductsPage'
+import { Category, MenuItem } from '@/db'
 import React from 'react'
 
 const GetCategoryItems = async (category: Category) => {
   const res = await fetch(`http://localhost:3000/api/menu/${category}`)
   const data = await res.json()
-  return { ...data }
+  return data
 }
 
 export default async function Page({
@@ -12,7 +13,6 @@ export default async function Page({
 }: {
   params: { category: Category }
 }) {
-  const items = await GetCategoryItems(params.category)
-  console.log(items)
-  return <div> {params.category}</div>
+  const products: MenuItem[] = await GetCategoryItems(params.category)
+  return <ProductsPage products={products} category={params.category} />
 }

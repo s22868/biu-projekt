@@ -6,5 +6,27 @@
     "language": "Language",
     "polish": "Polish",
     "english": "English"
+  },
+  "Nav": {
+    "hamburger": "Burgers",
+    "fries": "Fries",
+    "drinks": "Drinks",
+    "desserts": "Desserts",
+    "mcwraps": "McWraps",
+    "chicken": "Chicken",
+    "mccafe": "McCafe",
+    "salads": "Salads",
+    "breakfast": "breakfast"
+  },
+  "ProductsPage": {
+    "hamburger": "Burgers",
+    "fries": "Fries",
+    "drinks": "Drinks",
+    "desserts": "Desserts",
+    "mcwraps": "McWraps",
+    "chicken": "Chicken",
+    "mccafe": "McCafe",
+    "salads": "Salads",
+    "breakfast": "breakfast"
   }
 }

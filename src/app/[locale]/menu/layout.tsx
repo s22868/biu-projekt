@@ -10,9 +10,9 @@ export default function MenuLayout({
   children: React.ReactNode
 }) {
   return (
-    <main className="container flex p-4 mx-auto">
+    <main className="flex overflow-hidden">
       <Nav />
-      <section>{children}</section>
+      <section className='w-full'>{children}</section>
     </main>
   )
 }
