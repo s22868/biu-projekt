@@ -17,7 +17,7 @@ const Summary: FC = () => {
   )
 
   return (
-    <div className="p-4">
+    <div className="flex flex-col h-screen px-4 py-6">
       <div className="flex items-center">
         <NextImage width={90} height={50} src="/images/cart.png" alt="Cart" />
         <div className="text-5xl font-bold text-gray-800">
@@ -29,7 +29,7 @@ const Summary: FC = () => {
           <SummaryItem key={index} index={index} {...item} />
         ))}
       </ul>
-      <div className="my-4 text-right">
+      <div className="self-end my-4 mt-auto">
         <p className="text-2xl font-medium">
           {t('sub total')} : {normalizePrice(totalPrice * 0.76, locale)}
         </p>
@@ -43,13 +43,13 @@ const Summary: FC = () => {
       <div className="flex gap-4">
         <Link
           href="/menu/hamburger"
-          className="flex-[1] border border-gray-400 h-14 hover:bg-gray-100 flex items-center justify-center"
+          className="flex-[1] border border-gray-400 h-14 hover:bg-gray-100 flex items-center justify-center font-medium tracking-wider"
         >
           {t('order more')}
         </Link>
         <Link
           href="/"
-          className="border border-gray-400 flex-[2] h-14 bg-primary hover:bg-primary-light flex items-center justify-center"
+          className="border border-gray-400 flex-[2] h-14 bg-primary hover:bg-primary-light flex items-center justify-center font-medium tracking-wider"
         >
           {t('confirm')}
         </Link>

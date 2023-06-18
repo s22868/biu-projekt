@@ -38,7 +38,7 @@ const Welcome: FC = () => {
       <div>
         <h2 className="text-center">{t('language')}</h2>
         <div className="flex gap-4 p-4">
-          <Link href="/" locale="pl" className={classNames("p-2 border border-gray-400", {
+          <Link href="/" locale="pl" className={classNames("p-2 border border-gray-400 font-medium tracking-wider", {
             'border-primary': locale === 'pl',
           })}>
             {t('polish')}
@@ -46,7 +46,7 @@ const Welcome: FC = () => {
           <Link
             href="/"
             locale="en"
-            className={classNames("p-2 border border-gray-400", {
+            className={classNames("p-2 border border-gray-400 font-medium tracking-wider", {
               'border-primary': locale === 'en',
             })}
           >
@@ -69,7 +69,7 @@ const DeliveryOption: FC<DeliveryOptionProps> = ({ onClick, type }) => {
   const t = useTranslations('Welcome')
   return (
     <button
-      className="flex flex-col items-center gap-2 py-4 transition-colors border border-gray-500 hover:border-primary active:bg-gray-200 w-[260px]"
+      className="flex flex-col items-center gap-2 py-4 transition-colors border border-gray-500 hover:border-primary active:bg-gray-200 w-[260px] "
       onClick={onClick}
     >
       <h4 className="text-2xl font-light tracking-wider">

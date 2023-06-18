@@ -27,7 +27,7 @@ const SummaryItem: FC<CartItem & { index: number }> = ({
   return (
     <li className="flex items-center gap-3">
       <button
-        className="p-2 border border-gray-400"
+        className="p-2 font-medium tracking-wider border border-gray-400"
         onClick={handleRemoveFromCart}
       >
         {t('remove')}

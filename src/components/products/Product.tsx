@@ -44,7 +44,7 @@ const Product: FC<MenuItem> = ({
     <li>
       <button
         onClick={() => setShowModal(true)}
-        className="w-full p-4 border border-gray-400"
+        className="w-full p-4 font-medium tracking-wider border border-gray-400"
       >
         <div className="relative w-full aspect-[10/8]">
           <NextImage src={image} fill sizes="100vw" alt={name} />
@@ -65,7 +65,7 @@ const Product: FC<MenuItem> = ({
               <button
                 disabled={quantity === 1}
                 onClick={() => setQuantity((prev) => --prev)}
-                className="border border-gray-400 h-14 w-14 disabled:cursor-not-allowed hover:bg-gray-50 disabled:bg-gray-300"
+                className="font-medium tracking-wider border border-gray-400 h-14 w-14 disabled:cursor-not-allowed hover:bg-gray-50 disabled:bg-gray-300"
               >
                 -
               </button>
@@ -79,7 +79,7 @@ const Product: FC<MenuItem> = ({
               <button
                 disabled={quantity === 10}
                 onClick={() => setQuantity((prev) => ++prev)}
-                className="border border-gray-400 h-14 w-14 disabled:cursor-not-allowed hover:bg-gray-50 disabled:bg-gray-300"
+                className="font-medium tracking-wider border border-gray-400 h-14 w-14 disabled:cursor-not-allowed hover:bg-gray-50 disabled:bg-gray-300"
               >
                 +
               </button>
@@ -88,13 +88,13 @@ const Product: FC<MenuItem> = ({
           <div className="flex gap-4 p-1 h-14">
             <button
               onClick={closeModal}
-              className="flex-1 border border-gray-400 hover:bg-gray-100 "
+              className="flex-1 font-medium tracking-wider border border-gray-400 hover:bg-gray-100"
             >
               {t('cancel')}
             </button>
             <button
               onClick={handleAddToCart}
-              className="flex-1 border border-gray-400 bg-primary hover:bg-primary-light"
+              className="flex-1 font-medium tracking-wider border border-gray-400 bg-primary hover:bg-primary-light"
             >
               {t('add')}
             </button>

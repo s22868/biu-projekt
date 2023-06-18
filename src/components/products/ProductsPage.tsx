@@ -36,7 +36,7 @@ const ProductsPage: FC<ProductsPageProps> = ({ category, products }) => {
           <span className="font-bold underline underline-offset-4">
             {normalizePrice(cartPrice, locale)}
           </span>
-          <div className="flex items-center justify-center w-[150px] hover:bg-primary-light h-12 ml-4 border border-gray-400 bg-primary">
+          <div className="flex items-center justify-center w-[150px] hover:bg-primary-light h-12 ml-4 border border-gray-400 bg-primary font-medium tracking-wider">
             {t('next')}
           </div>
         </Link>
