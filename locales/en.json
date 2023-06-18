@@ -27,7 +27,8 @@
     "chicken": "Chicken",
     "mccafe": "McCafe",
     "salads": "Salads",
-    "breakfast": "breakfast"
+    "breakfast": "breakfast",
+    "next": "Next"
   },
   "Product": {
     "cancel": "Cancel",

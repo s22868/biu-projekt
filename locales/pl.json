@@ -27,7 +27,8 @@
     "chicken": "Kurczak",
     "mccafe": "Kawa",
     "salads": "Sałatki",
-    "breakfast": "Śniadania"
+    "breakfast": "Śniadania",
+    "next": "Dalej"
   },
   "Product": {
     "cancel": "Anuluj",
