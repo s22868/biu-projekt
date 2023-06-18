@@ -32,11 +32,21 @@ const SummaryItem: FC<CartItem & { index: number }> = ({
       >
         {t('remove')}
       </button>
-      <NextImage className='object-cover pb-4' src={image} alt={name} width={100} height={50} />
-      <span className='text-4xl'>{quantity}</span>
+      <div className="relative w-[100px] aspect-[10/6]">
+        <NextImage
+          src={image}
+          className="object-cover object-[0%_75%] "
+          sizes="100vw"
+          fill
+          alt={name}
+        />
+      </div>
+      <span className="text-4xl">{quantity}</span>
       <span>x</span>
-      <span className='text-xl font-bold'>{name}</span>
-      <span className='underline text-md underline-offset-4'>{normalizePrice(price, locale)}</span>
+      <span className="text-xl font-bold">{name}</span>
+      <span className="underline text-md underline-offset-4">
+        {normalizePrice(price, locale)}
+      </span>
     </li>
   )
 }
