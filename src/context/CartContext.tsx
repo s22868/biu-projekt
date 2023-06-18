@@ -44,7 +44,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
       return {
         ...state,
         cartItems: state.cartItems.filter(
-          (item, index) => index !== action.payload.index
+          (_, index) => index !== action.payload.index
         ),
       }
     case 'CLEAR_CART':
