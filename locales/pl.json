@@ -98,5 +98,16 @@
     "ketchup": "Ketchup",
     "mustard": "Musztarda",
     "mayonnaise": "Majonez"
+  },
+  "Checkout": {
+    "select payment method": "Wybierz metodę płatności",
+    "pay-here": "Zapłać tutaj kartą",
+    "at-counter": "Zapłać przy kasie",
+    "total": "Suma"
+  },
+  "ThankYou": {
+    "header": "Tylko kilka chwil dzieli Cię od pyszności",
+    "thank-you": "Dziękujemy!",
+    "localizator": "Twoje zamówienie jest w drodze. Weź lokalizator i paragon, a następnie usiądź."
   }
 }

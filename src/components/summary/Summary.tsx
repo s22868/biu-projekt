@@ -48,7 +48,10 @@ const Summary: FC = () => {
           {t('order more')}
         </Link>
         <Link
-          href="/"
+          href={{
+            pathname: '/checkout',
+            query: { totalPrice: totalPrice.toFixed(2) },
+          }}
           className="border border-gray-400 flex-[2] h-14 bg-primary hover:bg-primary-light flex items-center justify-center font-medium tracking-wider"
         >
           {t('confirm')}

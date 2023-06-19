@@ -98,5 +98,16 @@
     "ketchup": "Ketchup",
     "mustard": "Mustard",
     "mayonnaise": "Mayonnaise"
+  },
+  "Checkout": {
+    "select payment method": "Select payment method",
+    "pay-here": "Pay here",
+    "at-counter": "At counter",
+    "total": "Total"
+  },
+  "ThankYou": {
+    "header": "You're just moments away from deliciouness",
+    "thank-you": "Thank you!",
+    "localizator": "Your order is on its way. Take your locator and receipt, then grab a seat."
   }
 }

@@ -7,6 +7,7 @@ import Link from 'next-intl/link'
 import React, { FC } from 'react'
 import NextImage from 'next/image'
 import normalizePrice from '@/utils/normalizePrice'
+import classNames from 'classnames'
 interface ProductsPageProps {
   products: MenuItem[]
   category: Category
@@ -21,14 +22,17 @@ const ProductsPage: FC<ProductsPageProps> = ({ category, products }) => {
     0
   )
 
-  console.log(cartState.cartItems)
-
   const t = useTranslations('ProductsPage')
   return (
     <div className="h-screen px-16 py-4 overflow-y-scroll no-scrollbar ">
       <div className="flex justify-between">
         <h1 className="text-6xl font-bold text-gray-800">{t(category)}</h1>
-        <Link href="/summary" className="flex items-center">
+        <Link
+          href="/summary"
+          className={classNames('flex items-center', {
+            'pointer-events-none cursor-not-allowed': cartPrice === 0,
+          })}
+        >
           <NextImage
             width={100}
             height={50}
@@ -38,7 +42,10 @@ const ProductsPage: FC<ProductsPageProps> = ({ category, products }) => {
           <span className="font-bold underline underline-offset-4">
             {normalizePrice(cartPrice, locale)}
           </span>
-          <div className="flex items-center justify-center w-[150px] hover:bg-primary-light h-12 ml-4 border border-gray-400 bg-primary font-medium tracking-wider">
+          <div className={classNames("flex items-center justify-center w-[150px] hover:bg-primary-light h-12 ml-4 border border-gray-400 bg-primary font-medium tracking-wider",
+          {
+            'bg-gray-50': cartPrice === 0,
+          })}>
             {t('next')}
           </div>
         </Link>

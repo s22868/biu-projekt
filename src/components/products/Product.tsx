@@ -83,7 +83,7 @@ const Product: FC<MenuItem> = ({
                 />
               ))}
 
-            <p>{normalizePrice(price * quantity, locale)}</p>
+            <p className='my-2 text-xl font-bold'>{normalizePrice(price * quantity, locale)}</p>
             <div className="flex items-center justify-center gap-1">
               <button
                 disabled={quantity === 1}
