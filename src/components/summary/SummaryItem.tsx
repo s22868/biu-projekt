@@ -16,6 +16,8 @@ const SummaryItem: FC<CartItem & { index: number }> = ({
   const { cartDispatch } = useCart()!
   const locale = useLocale()
   const t = useTranslations('Summary')
+  const tProduct = useTranslations('Product')
+  const tIngredients = useTranslations('Ingredients')
   const handleRemoveFromCart = () => {
     cartDispatch({
       type: 'REMOVE_FROM_CART',
@@ -24,6 +26,10 @@ const SummaryItem: FC<CartItem & { index: number }> = ({
       },
     })
   }
+
+  const extraIngredients =
+    ingredients?.filter((ing) => ing.quantity !== 1) || []
+
   return (
     <li className="flex items-center gap-3">
       <button
@@ -43,10 +49,23 @@ const SummaryItem: FC<CartItem & { index: number }> = ({
       </div>
       <span className="text-4xl">{quantity}</span>
       <span>x</span>
-      <span className="text-xl font-bold">{name}</span>
+      <span className="text-xl font-bold">
+        {tProduct(name)} {Boolean(extraIngredients.length) && '*'}
+      </span>
       <span className="underline text-md underline-offset-4">
         {normalizePrice(price, locale)}
       </span>
+      {Boolean(extraIngredients.length) && (
+        <span className="flex gap-2 text-xs">
+          (
+          {extraIngredients.map((ing) => (
+            <p className="font-bold" key={ing.name}>
+              {tIngredients(ing.name)} x {ing.quantity}
+            </p>
+          ))}
+          )
+        </span>
+      )}
     </li>
   )
 }

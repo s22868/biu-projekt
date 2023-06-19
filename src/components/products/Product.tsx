@@ -1,16 +1,17 @@
 'use client'
 import { MenuItem } from '@/db'
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, useState } from 'react'
 import NextImage from 'next/image'
 import Modal from '@/components/modal/Modal'
 import { useCart } from '@/context/CartContext'
 import { useLocale, useTranslations } from 'next-intl'
 import normalizePrice from '@/utils/normalizePrice'
+import Ingredient from '@/components/products/Ingredient'
 
 const Product: FC<MenuItem> = ({
   description,
   image,
-  ingredients,
+  ingredients: initIngredients,
   name,
   price,
 }) => {
@@ -18,6 +19,7 @@ const Product: FC<MenuItem> = ({
   const [showModal, setShowModal] = useState(false)
   const { cartDispatch } = useCart()!
   const [quantity, setQuantity] = useState(1)
+  const [ingredients, setIngredients] = useState(initIngredients || [])
 
   const closeModal = () => {
     setShowModal(false)
@@ -40,6 +42,17 @@ const Product: FC<MenuItem> = ({
 
   const locale = useLocale()
 
+  const handleSetIngredients = (ingredient: string, quantity: number) => {
+    setIngredients((prevIngredients) =>
+      prevIngredients.map((ing) => {
+        if (ing.name === ingredient) {
+          return { ...ing, quantity }
+        }
+        return ing
+      })
+    )
+  }
+
   return (
     <li>
       <button
@@ -50,7 +63,7 @@ const Product: FC<MenuItem> = ({
           <NextImage src={image} fill sizes="100vw" alt={name} />
         </div>
 
-        <h2 className="font-bold">{name}</h2>
+        <h2 className="font-bold">{t(name)}</h2>
         <p>{normalizePrice(price, locale)}</p>
       </button>
       {showModal && (
@@ -60,6 +73,16 @@ const Product: FC<MenuItem> = ({
               <NextImage src={image} sizes="100vw" fill alt={name} />
             </div>
             <h2 className="font-bold">{name}</h2>
+
+            {Boolean(ingredients?.length) &&
+              ingredients.map((ing, index) => (
+                <Ingredient
+                  key={index}
+                  changeIngredientQuantity={handleSetIngredients}
+                  {...ing}
+                />
+              ))}
+
             <p>{normalizePrice(price * quantity, locale)}</p>
             <div className="flex items-center justify-center gap-1">
               <button

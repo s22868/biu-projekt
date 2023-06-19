@@ -21,6 +21,8 @@ const ProductsPage: FC<ProductsPageProps> = ({ category, products }) => {
     0
   )
 
+  console.log(cartState.cartItems)
+
   const t = useTranslations('ProductsPage')
   return (
     <div className="h-screen px-16 py-4 overflow-y-scroll no-scrollbar ">
