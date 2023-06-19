@@ -108,6 +108,8 @@
   "ThankYou": {
     "header": "You're just moments away from deliciouness",
     "thank-you": "Thank you!",
-    "localizator": "Your order is on its way. Take your locator and receipt, then grab a seat."
+    "localizator": "Your order is on its way. Take your locator and receipt, then grab a seat.",
+    "at-counter": "Your order is ready. Take your receipt and pick up your order at checkout.",
+    "pickup-time": "Estimated pickup time"
   }
 }

@@ -108,6 +108,8 @@
   "ThankYou": {
     "header": "Tylko kilka chwil dzieli Cię od pyszności",
     "thank-you": "Dziękujemy!",
-    "localizator": "Twoje zamówienie jest w drodze. Weź lokalizator i paragon, a następnie usiądź."
+    "localizator": "Twoje zamówienie jest w drodze. Weź lokalizator i paragon, a następnie usiądź.",
+    "at-counter": "Twoje zamówienie jest przygotowywane. Weź paragon i odbierz zamówienie przy kasie.",
+    "pickup-time": "Przewidywana godzina odbioru"
   }
 }

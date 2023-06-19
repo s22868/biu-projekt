@@ -13,7 +13,7 @@ export interface CartItem extends MenuItem {
 
 interface CartState {
   cartItems: CartItem[]
-  deliveryOption: 'eat-in' | 'take-away' | 'delivery'
+  deliveryOption: 'eat-in' | 'take-away'
 }
 
 type CartAction =
@@ -22,7 +22,7 @@ type CartAction =
   | { type: 'CLEAR_CART' }
   | {
       type: 'SET_DELIVERY_OPTION'
-      payload: 'eat-in' | 'take-away' | 'delivery'
+      payload: 'eat-in' | 'take-away'
     }
 
 interface CartContextType {
