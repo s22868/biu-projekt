@@ -39,12 +39,12 @@ const ThankYou: FC = () => {
 
     return isPaid
       ? deliveryOption === 'eat-in'
-        ? t('localizator-paid')
-        : t('at-counter-paid')
+        ? 'localizator-paid'
+        : 'at-counter-paid'
       : deliveryOption === 'eat-in'
-      ? t('localizator-counter-pay')
-      : t('at-counter-pay')
-  }, [cartState, params, t])
+      ? 'localizator-counter-pay'
+      : 'at-counter-pay'
+  }, [cartState, params])
 
   return (
     <div className="flex flex-col items-center justify-between h-screen py-24 text-center">
@@ -61,7 +61,7 @@ const ThankYou: FC = () => {
       <div className="space-y-10">
         <h1 className="font-bold text-9xl">{t('thank-you')}</h1>
 
-        <h3 className="max-w-xl mx-auto text-3xl">{message}</h3>
+        <h3 className="max-w-xl mx-auto text-3xl">{t(message)}</h3>
       </div>
       <div />
     </div>
