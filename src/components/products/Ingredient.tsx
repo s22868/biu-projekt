@@ -36,7 +36,7 @@ const Ingredient: FC<
         <NextImage
           fill
           sizes="100vw"
-          src={ingredientsPhotos[name].photo}
+          src={ingredientsPhotos[name]?.photo}
           alt={name}
         />
       </div>
