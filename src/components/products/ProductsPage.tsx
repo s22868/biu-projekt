@@ -4,7 +4,7 @@ import { useCart } from '@/context/CartContext'
 import { Category, MenuItem } from '@/db'
 import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next-intl/link'
-import React, { FC } from 'react'
+import React, { FC, useCallback } from 'react'
 import NextImage from 'next/image'
 import normalizePrice from '@/utils/normalizePrice'
 import classNames from 'classnames'
@@ -27,10 +27,11 @@ const ProductsPage: FC<ProductsPageProps> = ({ category, products }) => {
 
   const t = useTranslations('ProductsPage')
 
-  const cancelOrder = () => {
+  const cancelOrder = useCallback(() => {
     cartDispatch({ type: 'CLEAR_CART' })
     router.push('/')
-  }
+  }, [cartDispatch, router])
+
 
   return (
     <div className="h-screen px-16 py-4 overflow-y-scroll no-scrollbar ">
