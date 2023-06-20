@@ -4,7 +4,7 @@ import { useCart } from '@/context/CartContext'
 import { useLocale, useTranslations } from 'next-intl'
 import { useRouter } from 'next-intl/client'
 import { useSearchParams } from 'next/navigation'
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, useEffect, useMemo, useState } from 'react'
 
 const ThankYou: FC = () => {
   const t = useTranslations('ThankYou')
@@ -33,7 +33,7 @@ const ThankYou: FC = () => {
     setPickupTime(pickupTime)
   }, [locale])
 
-  const getMessage = () => {
+  const message = useMemo(() => {
     const isPaid = params.get('paid')
     const { deliveryOption } = cartState
 
@@ -44,7 +44,7 @@ const ThankYou: FC = () => {
       : deliveryOption === 'eat-in'
       ? t('localizator-counter-pay')
       : t('at-counter-pay')
-  }
+  }, [cartState, params, t])
 
   return (
     <div className="flex flex-col items-center justify-between h-screen py-24 text-center">
@@ -61,7 +61,7 @@ const ThankYou: FC = () => {
       <div className="space-y-10">
         <h1 className="font-bold text-9xl">{t('thank-you')}</h1>
 
-        <h3 className="max-w-xl mx-auto text-3xl">{getMessage()}</h3>
+        <h3 className="max-w-xl mx-auto text-3xl">{message}</h3>
       </div>
       <div />
     </div>
