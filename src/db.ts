@@ -61,7 +61,7 @@ export const menu: McDonaldsMenu = {
         'Odkryj klasykę na nowo! W tym burgerze znajdziesz soczystą wołowinę, podwójną porcję topionego sera cheddar, chrupiący bekon, prażoną cebulkę oraz odświeżające pikle. Całość podkreślona aromatycznym sosem Barrel & Bourbon BBQ.',
       ingredients: [
         { name: 'beef', quantity: 1 },
-        { name: 'cheese', quantity: 1 },
+        { name: 'cheese', quantity: 2 },
         { name: 'bacon', quantity: 1 },
         { name: 'onion', quantity: 1 },
         { name: 'pickle slices', quantity: 1 },
@@ -74,8 +74,8 @@ export const menu: McDonaldsMenu = {
       description:
         'Zawarte w nim dwa plastry wołowiny 100%, ser cheddar, cebula, keczup i musztarda powinny skutecznie przegonić głód!',
       ingredients: [
-        { name: 'beef', quantity: 1 },
-        { name: 'cheese', quantity: 1 },
+        { name: 'beef', quantity: 2 },
+        { name: 'cheese', quantity: 2 },
         { name: 'onion', quantity: 1 },
         { name: 'ketchup', quantity: 1 },
         { name: 'mustard', quantity: 1 },
@@ -88,8 +88,8 @@ export const menu: McDonaldsMenu = {
       description:
         'Dwa kotlety wołowe, ser, cebula, sałata, ogórek i sos Big Mac.',
       ingredients: [
-        { name: 'beef', quantity: 1 },
-        { name: 'cheese', quantity: 1 },
+        { name: 'beef', quantity: 2 },
+        { name: 'cheese', quantity: 2 },
         { name: 'onion', quantity: 1 },
         { name: 'lettuce', quantity: 1 },
         { name: 'pickle slices', quantity: 1 },
