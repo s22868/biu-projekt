@@ -18,3 +18,5 @@ export default async function Page({
   const products: MenuItem[] = await GetCategoryItems(params.category)
   return <ProductsPage products={products} category={params.category} />
 }
+
+export const revalidate = 5

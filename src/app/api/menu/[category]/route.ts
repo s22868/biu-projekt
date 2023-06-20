@@ -9,3 +9,5 @@ export async function GET(
 
   return NextResponse.json(Object.values(menu[category]))
 }
+
+export const revalidate = 5
