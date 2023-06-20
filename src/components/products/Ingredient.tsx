@@ -25,7 +25,7 @@ const Ingredient: FC<
   return (
     <div className="flex items-center justify-center">
       <button
-        disabled={quantity.current === 1}
+        disabled={quantity.current === 0}
         onClick={decreaseQuantity}
         className="flex items-center justify-center w-8 h-8 mx-2 font-medium tracking-wider border border-gray-400 disabled:cursor-not-allowed hover:bg-gray-50 disabled:bg-gray-300"
       >
