@@ -28,7 +28,8 @@
     "mccafe": "McCafe",
     "salads": "Salads",
     "breakfast": "Breakfast",
-    "next": "Next"
+    "next": "Next",
+    "clear": "Cancel order"
   },
   "Product": {
     "Małe frytki": "Small fries",
@@ -103,13 +104,17 @@
     "select payment method": "Select payment method",
     "pay-here": "Pay here",
     "at-counter": "At counter",
-    "total": "Total"
+    "total": "Total",
+    "pickup-at-checkout": "Pick up at checkout",
+    "pin-pad": "Please follow the instructions on the PIN pad"
   },
   "ThankYou": {
     "header": "You're just moments away from deliciouness",
     "thank-you": "Thank you!",
     "localizator": "Your order is on its way. Take your locator and receipt, then grab a seat.",
-    "at-counter": "Your order is ready. Take your receipt and pick up your order at checkout.",
+    "localizator-counter": "Your order is on its way. Grab your tracker and receipt, then pay for your order at the counter then grab a seat.",
+    "at-counter": "Your order is being prepared. Take your receipt and pick up your order at checkout.",
+    "at-counter-pay": "Your order is being prepared. Take the receipt and then pay for the order and pick it up at the checkout.",
     "pickup-time": "Estimated pickup time"
   }
 }

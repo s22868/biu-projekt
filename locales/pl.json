@@ -28,7 +28,8 @@
     "mccafe": "Kawa",
     "salads": "Sałatki",
     "breakfast": "Śniadania",
-    "next": "Dalej"
+    "next": "Dalej",
+    "clear": "Anuluj zamówienie"
   },
   "Product": {
     "Małe frytki": "Małe frytki",
@@ -103,13 +104,17 @@
     "select payment method": "Wybierz metodę płatności",
     "pay-here": "Zapłać tutaj kartą",
     "at-counter": "Zapłać przy kasie",
-    "total": "Suma"
+    "total": "Suma",
+    "pickup-at-checkout": "Odbierz przy kasie",
+    "pin-pad": "Postępuj zgodnie z instrukcjami na terminalu"
   },
   "ThankYou": {
     "header": "Tylko kilka chwil dzieli Cię od pyszności",
     "thank-you": "Dziękujemy!",
-    "localizator": "Twoje zamówienie jest w drodze. Weź lokalizator i paragon, a następnie usiądź.",
-    "at-counter": "Twoje zamówienie jest przygotowywane. Weź paragon i odbierz zamówienie przy kasie.",
+    "localizator-paid": "Twoje zamówienie jest w drodze. Weź lokalizator i paragon, a następnie usiądź.",
+    "localizator-counter-pay": "Twoje zamówienie jest w drodze. Weź lokalizator i paragon, a następnie opłać zamówienie przy kasie i usiądź.",
+    "at-counter-paid": "Twoje zamówienie jest przygotowywane. Weź paragon i odbierz zamówienie przy kasie.",
+    "at-counter-pay": "Twoje zamówienie jest przygotowywane. Weź paragon a następnie opłać zamówienie i odbierz przy kasie.",
     "pickup-time": "Przewidywana godzina odbioru"
   }
 }
